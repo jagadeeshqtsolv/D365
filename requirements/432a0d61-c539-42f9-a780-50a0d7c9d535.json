@@ -1,0 +1,6 @@
+{
+  "id": "432a0d61-c539-42f9-a780-50a0d7c9d535",
+  "title": "save customer",
+  "content": "<ol><li><p>Navigate to url - <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&amp;cmp=1001&amp;mi=SalesTableDetails\">https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&amp;cmp=1001&amp;mi=SalesTableDetails</a></p></li><li><p>click on Modules</p></li><li><p>Click on account receivables</p></li><li><p>click on all customers</p></li><li><p>click on new</p></li><li><p>fill customer account with details \"test123\"</p></li><li><p>fill name with details \"test\"</p></li><li><p>fill customer group with details \"test\"</p></li><li><p>click on save</p></li><li><p>validate newly created customer </p></li></ol><p></p>",
+  "createdAt": "2026-07-15T11:16:44.167Z"
+}
