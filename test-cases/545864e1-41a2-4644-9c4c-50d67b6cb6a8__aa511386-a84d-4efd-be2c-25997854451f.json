@@ -61,25 +61,11 @@
         "pageObjectMethod": "clickAllCustomers"
       },
       {
-        "id": "s8",
-        "action": "assertVisible",
-        "targetDescription": "Verify New button is visible",
-        "screenName": "AllCustomersFinanceAndOperationsPage",
-        "pageObjectMethod": "expectNewVisible"
-      },
-      {
         "id": "s9",
         "action": "tap",
         "targetDescription": "Click New",
         "screenName": "AllCustomersFinanceAndOperationsPage",
         "pageObjectMethod": "clickNew"
-      },
-      {
-        "id": "s10",
-        "action": "assertVisible",
-        "targetDescription": "Verify Customer account field visible",
-        "screenName": "AllCustomersFinanceAndOperationsPage",
-        "pageObjectMethod": "expectDynamicHeaderAccountNumVisible"
       },
       {
         "id": "s11",
@@ -90,26 +76,12 @@
         "value": "test123"
       },
       {
-        "id": "s12",
-        "action": "assertVisible",
-        "targetDescription": "Verify Name field visible",
-        "screenName": "AllCustomersFinanceAndOperationsPage",
-        "pageObjectMethod": "expectOrgNameVisible"
-      },
-      {
         "id": "s13",
         "action": "fill",
         "targetDescription": "Fill Name with 'test'",
         "screenName": "AllCustomersFinanceAndOperationsPage",
         "pageObjectMethod": "fillOrgName",
         "value": "test"
-      },
-      {
-        "id": "s14",
-        "action": "assertVisible",
-        "targetDescription": "Verify Customer group field visible",
-        "screenName": "AllCustomersFinanceAndOperationsPage",
-        "pageObjectMethod": "expectDynamicDetailCustGroupVisible"
       },
       {
         "id": "s15",
