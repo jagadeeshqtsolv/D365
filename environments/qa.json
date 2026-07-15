@@ -1,6 +1,4 @@
 {
-  "name": "qa",
-  "slug": "qa",
   "baseURL": "https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&cmp=1001&mi=SalesTableDetails",
   "browser": "chromium",
   "headless": true,
