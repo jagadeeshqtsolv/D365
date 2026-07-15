@@ -1,0 +1,166 @@
+{
+  "id": "aa511386-a84d-4efd-be2c-25997854451f",
+  "testPlanId": "545864e1-41a2-4644-9c4c-50d67b6cb6a8",
+  "requirementId": "432a0d61-c539-42f9-a780-50a0d7c9d535",
+  "suiteName": "Save Customer - E2E",
+  "case": {
+    "id": "aa511386-a84d-4efd-be2c-25997854451f",
+    "title": "Create new customer successfully and validate saved data",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Sales details URL",
+        "value": "https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&cmp=1001&mi=SalesTableDetails"
+      },
+      {
+        "id": "s2",
+        "action": "assertVisible",
+        "targetDescription": "Verify Modules is visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectBeforeVisible"
+      },
+      {
+        "id": "s3",
+        "action": "tap",
+        "targetDescription": "Click Modules",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickBefore"
+      },
+      {
+        "id": "s4",
+        "action": "assertVisible",
+        "targetDescription": "Verify Accounts receivable is visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectAccountsReceivableVisible"
+      },
+      {
+        "id": "s5",
+        "action": "tap",
+        "targetDescription": "Click Accounts receivable",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAccountsReceivable"
+      },
+      {
+        "id": "s6",
+        "action": "assertVisible",
+        "targetDescription": "Verify All customers is visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectAllCustomersVisible"
+      },
+      {
+        "id": "s7",
+        "action": "tap",
+        "targetDescription": "Click All customers",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAllCustomers"
+      },
+      {
+        "id": "s8",
+        "action": "assertVisible",
+        "targetDescription": "Verify New button is visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectNewVisible"
+      },
+      {
+        "id": "s9",
+        "action": "tap",
+        "targetDescription": "Click New",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickNew"
+      },
+      {
+        "id": "s10",
+        "action": "assertVisible",
+        "targetDescription": "Verify Customer account field visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicHeaderAccountNumVisible"
+      },
+      {
+        "id": "s11",
+        "action": "fill",
+        "targetDescription": "Fill Customer account with 'test123'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicHeaderAccountNum",
+        "value": "test123"
+      },
+      {
+        "id": "s12",
+        "action": "assertVisible",
+        "targetDescription": "Verify Name field visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectOrgNameVisible"
+      },
+      {
+        "id": "s13",
+        "action": "fill",
+        "targetDescription": "Fill Name with 'test'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillOrgName",
+        "value": "test"
+      },
+      {
+        "id": "s14",
+        "action": "assertVisible",
+        "targetDescription": "Verify Customer group field visible",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicDetailCustGroupVisible"
+      },
+      {
+        "id": "s15",
+        "action": "fill",
+        "targetDescription": "Fill Customer group with 'test'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicDetailCustGroup",
+        "value": "test"
+      },
+      {
+        "id": "s16",
+        "action": "assertEnabled",
+        "targetDescription": "Verify Save is enabled",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectSaveEnabled"
+      },
+      {
+        "id": "s17",
+        "action": "tap",
+        "targetDescription": "Click Save",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickSave"
+      },
+      {
+        "id": "s18",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Customer account value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicHeaderAccountNumValue",
+        "assertion": "test123"
+      },
+      {
+        "id": "s19",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Name value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectOrgNameValue",
+        "assertion": "test"
+      },
+      {
+        "id": "s20",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Customer group value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicDetailCustGroupValue",
+        "assertion": "test"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

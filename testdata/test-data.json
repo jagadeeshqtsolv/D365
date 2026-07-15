@@ -1,1 +1,25 @@
-{}
+{
+  "createNewCustomerSuccessfullyAndValidateSavedData": {
+    "fillCustomerAccountWithTest123": "test123",
+    "fillNameWithTest": "test",
+    "fillCustomerGroupWithTest": "test"
+  },
+  "saveRemainsDisabledUntilAllMandatoryFieldsAreFilledThenSaveAndVerify": {
+    "fillCustomerAccountWithGate001": "gate001",
+    "fillNameWithGateName": "Gate Name",
+    "fillCustomerGroupWithTest": "test"
+  },
+  "cancelNewCustomerEntryDiscardsUnsavedData": {
+    "fillCustomerAccountWithCancel001": "cancel001",
+    "fillNameWithTocancel": "ToCancel",
+    "fillCustomerGroupWithTest": "test"
+  },
+  "correctMistypedFieldsUsingClearThenSaveAndValidate": {
+    "typeWrongCustomerAccountWrong1": "wrong1",
+    "fillCorrectedCustomerAccountClear001": "clear001",
+    "typeWrongNameWrongName": "Wrong Name",
+    "fillCorrectedNameClearCorrect": "Clear Correct",
+    "typeWrongCustomerGroupWronggroup": "wronggroup",
+    "fillCorrectedCustomerGroupTest": "test"
+  }
+}

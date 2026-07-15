@@ -1,0 +1,138 @@
+{
+  "id": "6d7c85a4-6607-48f9-b792-bafe09d3cf49",
+  "testPlanId": "545864e1-41a2-4644-9c4c-50d67b6cb6a8",
+  "requirementId": "432a0d61-c539-42f9-a780-50a0d7c9d535",
+  "suiteName": "Save Customer - E2E",
+  "case": {
+    "id": "6d7c85a4-6607-48f9-b792-bafe09d3cf49",
+    "title": "Save remains disabled until all mandatory fields are filled, then save and verify",
+    "priority": "P1",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Sales details URL",
+        "value": "https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&cmp=1001&mi=SalesTableDetails"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Modules",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickBefore"
+      },
+      {
+        "id": "s3",
+        "action": "tap",
+        "targetDescription": "Click Accounts receivable",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAccountsReceivable"
+      },
+      {
+        "id": "s4",
+        "action": "tap",
+        "targetDescription": "Click All customers",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAllCustomers"
+      },
+      {
+        "id": "s5",
+        "action": "tap",
+        "targetDescription": "Click New",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickNew"
+      },
+      {
+        "id": "s6",
+        "action": "assertDisabled",
+        "targetDescription": "Verify Save is disabled initially",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectSaveDisabled"
+      },
+      {
+        "id": "s7",
+        "action": "fill",
+        "targetDescription": "Fill Customer account with 'gate001'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicHeaderAccountNum",
+        "value": "gate001"
+      },
+      {
+        "id": "s8",
+        "action": "assertDisabled",
+        "targetDescription": "Verify Save is still disabled after only account",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectSaveDisabled"
+      },
+      {
+        "id": "s9",
+        "action": "fill",
+        "targetDescription": "Fill Name with 'Gate Name'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillOrgName",
+        "value": "Gate Name"
+      },
+      {
+        "id": "s10",
+        "action": "assertDisabled",
+        "targetDescription": "Verify Save is still disabled after account+name",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectSaveDisabled"
+      },
+      {
+        "id": "s11",
+        "action": "fill",
+        "targetDescription": "Fill Customer group with 'test'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicDetailCustGroup",
+        "value": "test"
+      },
+      {
+        "id": "s12",
+        "action": "assertEnabled",
+        "targetDescription": "Verify Save is enabled when required fields are completed",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectSaveEnabled"
+      },
+      {
+        "id": "s13",
+        "action": "tap",
+        "targetDescription": "Click Save",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickSave"
+      },
+      {
+        "id": "s14",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Customer account value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicHeaderAccountNumValue",
+        "assertion": "gate001"
+      },
+      {
+        "id": "s15",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Name value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectOrgNameValue",
+        "assertion": "Gate Name"
+      },
+      {
+        "id": "s16",
+        "action": "assertValue",
+        "targetDescription": "Validate saved Customer group value",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicDetailCustGroupValue",
+        "assertion": "test"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

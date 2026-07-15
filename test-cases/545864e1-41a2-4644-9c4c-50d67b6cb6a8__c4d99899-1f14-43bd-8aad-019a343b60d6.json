@@ -1,0 +1,114 @@
+{
+  "id": "c4d99899-1f14-43bd-8aad-019a343b60d6",
+  "testPlanId": "545864e1-41a2-4644-9c4c-50d67b6cb6a8",
+  "requirementId": "432a0d61-c539-42f9-a780-50a0d7c9d535",
+  "suiteName": "Save Customer - E2E",
+  "case": {
+    "id": "c4d99899-1f14-43bd-8aad-019a343b60d6",
+    "title": "Cancel new customer entry discards unsaved data",
+    "priority": "P2",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "s1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Sales details URL",
+        "value": "https://s-dev-ukg.sandbox.operations.dynamics.com/?cross-company=true&cmp=1001&mi=SalesTableDetails"
+      },
+      {
+        "id": "s2",
+        "action": "tap",
+        "targetDescription": "Click Modules",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickBefore"
+      },
+      {
+        "id": "s3",
+        "action": "tap",
+        "targetDescription": "Click Accounts receivable",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAccountsReceivable"
+      },
+      {
+        "id": "s4",
+        "action": "tap",
+        "targetDescription": "Click All customers",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickAllCustomers"
+      },
+      {
+        "id": "s5",
+        "action": "tap",
+        "targetDescription": "Click New",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickNew"
+      },
+      {
+        "id": "s6",
+        "action": "fill",
+        "targetDescription": "Fill Customer account with 'cancel001'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicHeaderAccountNum",
+        "value": "cancel001"
+      },
+      {
+        "id": "s7",
+        "action": "fill",
+        "targetDescription": "Fill Name with 'ToCancel'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillOrgName",
+        "value": "ToCancel"
+      },
+      {
+        "id": "s8",
+        "action": "fill",
+        "targetDescription": "Fill Customer group with 'test'",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "fillDynamicDetailCustGroup",
+        "value": "test"
+      },
+      {
+        "id": "s9",
+        "action": "tap",
+        "targetDescription": "Click Cancel",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickCancelButton"
+      },
+      {
+        "id": "s10",
+        "action": "tap",
+        "targetDescription": "Start new entry again",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "clickNew"
+      },
+      {
+        "id": "s11",
+        "action": "assertValue",
+        "targetDescription": "Verify Customer account field is empty",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicHeaderAccountNumValue"
+      },
+      {
+        "id": "s12",
+        "action": "assertValue",
+        "targetDescription": "Verify Name field is empty",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectOrgNameValue"
+      },
+      {
+        "id": "s13",
+        "action": "assertValue",
+        "targetDescription": "Verify Customer group field is empty",
+        "screenName": "AllCustomersFinanceAndOperationsPage",
+        "pageObjectMethod": "expectDynamicDetailCustGroupValue"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}
